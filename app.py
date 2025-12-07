@@ -6,9 +6,10 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-PINTEREST_EMAIL = "omarghost007@gmail.com"
-PINTEREST_PASSWORD = "Lowkey.123?"
-BOARD_NAME = "Tasteswinebar"
+PINTEREST_EMAIL = os.environ["omarghost007@gmail.com"]
+PINTEREST_PASSWORD = os.environ["Lowkey.123?"]
+BOARD_NAME = os.environ["Tasteswinebar"]
+
 
 def download_image(url):
     response = requests.get(url)
@@ -67,3 +68,4 @@ def create_pin():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
